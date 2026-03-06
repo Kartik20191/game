@@ -12,8 +12,6 @@ font-family:Arial;
 background:#f5f5f5;
 }
 
-/* Header */
-
 header{
 background:#111;
 color:white;
@@ -21,8 +19,6 @@ text-align:center;
 padding:12px;
 font-size:20px;
 }
-
-/* Search */
 
 .search{
 padding:10px;
@@ -34,9 +30,15 @@ padding:10px;
 border-radius:6px;
 border:none;
 font-size:14px;
+box-sizing:border-box;
 }
 
-
+.categories{
+display:flex;
+gap:8px;
+overflow:auto;
+padding:10px;
+}
 
 .cat{
 background:white;
@@ -45,9 +47,14 @@ border-radius:20px;
 font-size:12px;
 cursor:pointer;
 white-space:nowrap;
+box-shadow:0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Products */
+.cat.active{
+background:#111;
+color:white;
+font-weight:bold;
+}
 
 .products{
 display:grid;
@@ -69,7 +76,6 @@ padding-bottom:5px;
 width:100%;
 aspect-ratio:1/1;
 object-fit:cover;
-display:block;
 }
 
 .card h4{
@@ -96,18 +102,18 @@ margin:6px;
 border-radius:4px;
 }
 
-/* Section */
-
 .section{
 padding:5px 10px;
 font-weight:bold;
 }
 
-/* Ads */
-
 .ad{
 text-align:center;
 margin:10px 0;
+}
+
+.hide{
+display:none;
 }
 
 </style>
@@ -116,77 +122,149 @@ margin:10px 0;
 <body>
 
 <header>
-    roh_itt230
+roh_itt230
 </header>
 
-<!-- SEARCH BAR -->
-
 <div class="search">
-<input type="text" id="search" placeholder="Search products...">
+<input type="text" placeholder="Search products...">
 </div>
 
+<div class="categories">
+<div class="cat active" id="cat-trend" onclick="showCategory('trending')">🔥 Trending</div>
+<div class="cat" id="cat-rc" onclick="showCategory('rc')">🚗 RC Cars</div>
+</div>
 
+<!-- ================= TRENDING ================= -->
 
-<!-- TOP AD -->
+<div id="trending-section">
 
 <div class="ad">
 
 <script>
-  atOptions = {
-    'key' : '8a1174c519583c56a132266d3a82a951',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
+atOptions = {
+'key' : '8a1174c519583c56a132266d3a82a951',
+'format' : 'iframe',
+'height' : 50,
+'width' : 320,
+'params' : {}
+};
 </script>
-<script src="https://www.highperformanceformat.com/8a1174c519583c56a132266d3a82a951/invoke.js"></script>
+
+<script src="//www.highperformanceformat.com/8a1174c519583c56a132266d3a82a951/invoke.js"></script>
 
 </div>
 
-<!-- TRENDING SECTION -->
-
-<div class="section">
-🔥 Trending Products
-</div>
+<div class="section">🔥 Trending Products</div>
 
 <div class="products">
 
 <div class="card">
 <img src="https://rukminim2.flixcart.com/image/3840/3840/xif0q/remote-control-toy/j/v/7/flare-remote-control-car-4-wheel-drive-drifting-rc-2-l-o-t-cars-original-imahk32fkx2xezty.jpeg?q=90">
-<h4>Deal: L.O.T TOYS Flare Remote Control Car | 20Kmph, 2.4Ghz | Rc Drifting Car, Rc Car, Birthday Gift, 4 Wheel Drive, Boost Mode, Long Range Remote, Hard Plastic Top with LED Head Light (Race Grey) </h4>
+<h4>Flare Remote Control Drift Car</h4>
 <div class="price">₹2134</div>
-<a href="https://fktr.in/hELoex3" class="btn">Buy</a>
+<a href="https://fktr.in/hELoex3" class="btn" target="_blank">Buy</a>
 </div>
 
 <div class="card">
 <img src="https://rukminim2.flixcart.com/image/3840/3840/xif0q/remote-control-toy/t/r/s/racing-drift-1-toofun-original-imahkbmxnh9wjtkz.jpeg?q=90">
-<h4>Toofun Racing drift </h4>
+<h4>Toofun Racing Drift</h4>
 <div class="price">₹2999</div>
-<a href="https://fktr.in/0WkcR74" class="btn">Buy</a>
+<a href="https://fktr.in/0WkcR74" class="btn" target="_blank">Buy</a>
 </div>
 
 <div class="card">
 <img src="https://rukminim2.flixcart.com/image/1920/1920/xif0q/remote-control-toy/i/h/w/rc-drift-car-for-adults-30km-h-high-speed-4wd-drifting-car-with-original-imahj2f5pzzdhzah.jpeg?q=90">
-<h4>RC drift car for adults DWH 30km/h high speed 4WD driftng </h4>
+<h4>RC drift car high speed</h4>
 <div class="price">₹2958</div>
-<a href="https://fktr.in/3whQaen" class="btn">Buy</a>
+<a href="https://fktr.in/3whQaen" class="btn" target="_blank">Buy</a>
 </div>
 
 </div>
-
-<!-- NATIVE AD -->
 
 <div class="ad">
 
-<script async="async" data-cfasync="false"
-src="https://pl26770746.effectivegatecpm.com/ef51819f9177486cf86c6fcf11f84944/invoke.js"></script>
+<script async data-cfasync="false"
+src="//pl26770746.effectivegatecpm.com/ef51819f9177486cf86c6fcf11f84944/invoke.js"></script>
 
 <div id="container-ef51819f9177486cf86c6fcf11f84944"></div>
 
 </div>
 
-<!-- MORE PRODUCTS -->
+</div>
+
+<!-- ================= RC CARS ================= -->
+
+<div id="rc-section" class="hide">
+
+<div class="ad">
+
+<script>
+atOptions = {
+'key' : '0d3cfd375c778595fcefc12483f3f161',
+'format' : 'iframe',
+'height' : 50,
+'width' : 320,
+'params' : {}
+};
+</script>
+
+<script src="https://www.highperformanceformat.com/0d3cfd375c778595fcefc12483f3f161/invoke.js"></script>
+
+</div>
+
+<div class="section">🚗 RC Cars</div>
+
+<div class="products">
+
+<div class="card">
+<img src="https://rukminim2.flixcart.com/image/1920/1920/xif0q/remote-control-toy/v/g/d/dash-remote-control-car-rc-drifting-dual-speed-modes-lights-2-l-original-imahjkf5d4jg69gy.jpeg?q=90">
+<h4>l-o-t-cars-dash-remote-control-car-rc-drifting-dual-speed-modes-lights</h4>
+<div class="price">₹2090</div>
+<a href="https://fktr.in/oM4eDDi" class="btn">Buy</a>
+</div>
 
 
 
+</div>
+
+<div class="ad">
+
+<script async="async" data-cfasync="false" src="https://pl28855308.effectivegatecpm.com/d1a3c0e5b2149376209790250216ecbb/invoke.js"></script>
+
+<div id="container-d1a3c0e5b2149376209790250216ecbb"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function showCategory(cat){
+
+let trending=document.getElementById("trending-section");
+let rc=document.getElementById("rc-section");
+
+let ct=document.getElementById("cat-trend");
+let cr=document.getElementById("cat-rc");
+
+if(cat=="trending"){
+trending.classList.remove("hide");
+rc.classList.add("hide");
+
+ct.classList.add("active");
+cr.classList.remove("active");
+}
+else{
+rc.classList.remove("hide");
+trending.classList.add("hide");
+
+cr.classList.add("active");
+ct.classList.remove("active");
+}
+
+}
+
+</script>
+
+</body>
+</html>
